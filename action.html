@@ -1,0 +1,1195 @@
+<?php
+    loadClass('Image');    
+
+    $config = Config::getConfig('SITE');
+    
+    $home = !empty($config['HTTP_HOST']['VAL']) ? $config['HTTP_HOST']['VAL'] : '';
+    $logo = !empty($config['LOGO']['VAL']) ? $config['LOGO']['VAL'] : '';    
+    $logoSrc = Image::getSrc($logo);
+    $phone = !empty($config['PHONE']['VAL']) ? $config['PHONE']['VAL'] : '';    
+    $email = !empty($config['EMAIL']['VAL']) ? $config['EMAIL']['VAL'] : '';    
+?>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>NStoys</title>
+      <link rel="icon" type="image/png" href="https://nstopt.ru/favicon.png" sizes="16x16">
+      <style type="text/css">
+         /* Client-specific Styles */
+         #outlook a {padding:0;} /* Force Outlook to provide a "view in browser" menu link. */
+         body{width:100% !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0;}
+         /* Prevent Webkit and Windows Mobile platforms from changing default font sizes, while not breaking desktop design. */
+         .ExternalClass {width:100%;} /* Force Hotmail to display emails at full width */
+         .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;} /* Force Hotmail to display normal line spacing.  More on that: http://www.emailonacid.com/forum/viewthread/43/ */
+         #backgroundTable {margin:0; padding:0; width:100% !important; line-height: 100% !important;}
+         img {outline:none; text-decoration:none;border:none; -ms-interpolation-mode: bicubic;}
+         a img {border:none;}
+         .image_fix {display:block;}
+         p {margin: 0px 0px !important;}
+         
+         table td {border-collapse: collapse;}
+         table { border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; }
+         /*a {color: #e95353;text-decoration: none;text-decoration:none!important;}*/
+         /*STYLES*/
+         table[class=full] { width: 100%; clear: both; }
+         
+         /*################################################*/
+         /*IPAD STYLES*/
+         /*################################################*/
+         @media only screen and (max-width: 640px) {
+         a[href^="tel"], a[href^="sms"] {
+         text-decoration: none;
+         color: #ffffff; /* or whatever your want */
+         pointer-events: none;
+         cursor: default;
+         }
+         .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
+         text-decoration: default;
+         color: #ffffff !important;
+         pointer-events: auto;
+         cursor: default;
+         }
+         table[class=devicewidth] {width: 440px!important;text-align:center!important;}
+         table[class=devicewidthinner] {width: 420px!important;text-align:center!important;}
+         table[class="sthide"]{display: none!important;}
+         img[class="bigimage"]{width: 420px!important;height:219px!important;}
+         img[class="col2img"]{width: 420px!important;height:258px!important;}
+         img[class="image-banner"]{width: 440px!important;height:106px!important;}
+         td[class="menu"]{text-align:center !important; padding: 0 0 10px 0 !important;}
+         td[class="logo"]{padding:10px 0 5px 0!important;margin: 0 auto !important;}
+         img[class="logo"]{padding:0!important;margin: 0 auto !important;}
+
+         }
+         /*##############################################*/
+         /*IPHONE STYLES*/
+         /*##############################################*/
+         @media only screen and (max-width: 480px) {
+         a[href^="tel"], a[href^="sms"] {
+         text-decoration: none;
+         color: #ffffff; /* or whatever your want */
+         pointer-events: none;
+         cursor: default;
+         }
+         .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
+         text-decoration: default;
+         color: #ffffff !important; 
+         pointer-events: auto;
+         cursor: default;
+         }
+         table[class=devicewidth] {width: 280px!important;text-align:center!important;}
+         table[class=devicewidthinner] {width: 260px!important;text-align:center!important;}
+         table[class="sthide"]{display: none!important;}
+         img[class="bigimage"]{width: 260px!important;height:136px!important;}
+         img[class="col2img"]{width: 260px!important;height:160px!important;}
+         img[class="image-banner"]{width: 280px!important;height:68px!important;}
+         
+         }
+      </style>
+
+      
+   </head>
+<body>
+<div class="block">
+
+   <!-- Start of preheader -->
+   <table width="100%" bgcolor="#f6f4f5" cellpadding="0" cellspacing="0" border="0" id="backgroundTable" st-sortable="preheader">
+      <tbody>
+         <tr>
+            <td width="100%">
+               <table width="580" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth">
+                  <tbody>
+                     <!-- Spacing -->
+                     <tr>
+                        <td width="100%" height="5"></td>
+                     </tr>
+                     <!-- Spacing -->
+                     <tr>
+                        <td align="right" valign="middle" style="font-family: Helvetica, arial, sans-serif; font-size: 10px;color: #999999" st-content="preheader">
+                           Если вы не можете прочитать это письмо,   <a class="hlite" href="mailto:info@nstopt.ru" style="text-decoration: none; color: #0db9ea">нажмите здесь</a> 
+                        </td>
+                     </tr>
+                     <!-- Spacing -->
+                     <tr>
+                        <td width="100%" height="5"></td>
+                     </tr>
+                     <!-- Spacing -->
+                  </tbody>
+               </table>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+   <!-- End of preheader -->
+</div>
+<div class="block">
+   <!-- start of header   style="background:url(https://nstopt.ru/bg-min.jpg);"   bgcolor="#0db9ea"  -->
+   <table width="100%" bgcolor="#f6f4f5" cellpadding="0" cellspacing="0" border="0" id="backgroundTable" st-sortable="header">
+      <tbody>
+         <tr>
+            <td>
+               <table width="580"    style="background:url(https://nstopt.ru/bg-min.jpg);"  cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth" hlitebg="edit" shadow="edit">
+                  <tbody>
+                     <tr>
+                        <td>
+                           <!-- logo -->
+                           <table width="280" cellpadding="0" cellspacing="0" border="0" align="left" class="devicewidth">
+                              <tbody>
+                                 <tr>
+                                    <td valign="middle" width="270" style="padding: 10px 0 10px 20px;" class="logo">
+                                       <div class="imgpop">
+                                          <a href="https://nstopt.ru/"><img src="https://nstopt.ru/image/logo-ny.png" alt="logo" border="0" style="display:block; border:none; outline:none; text-decoration:none;" st-image="edit" class="logo"></a>
+                                       </div>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                           <!-- End of logo -->
+                           <!-- menu -->
+                           <table width="280" cellpadding="0" cellspacing="0" border="0" align="right" class="devicewidth">
+                              <tbody>
+                                 <tr>
+                                    <td width="270" valign="middle" style="font-family: Helvetica, Arial, sans-serif;font-size: 14px; color: #c40000;line-height: 24px; padding: 10px 0;" align="right" class="menu" st-content="menu">
+                                       <a href="https://nstopt.ru/" style="text-decoration: none; color: #c40000;"><b>Главная</b></a>
+                                       &nbsp;|&nbsp;
+                                       <a href="https://nstopt.ru/about/" style="text-decoration: none; color: #c40000;"><b>О компании</b></a>
+                                       &nbsp;|&nbsp;
+                                       <a href="https://nstopt.ru/catalog/" style="text-decoration: none; color: #c40000;"><b>Каталог</b></a>
+                                    </td>
+                                    <td width="20"></td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                           <!-- info -->
+                           <table width="280" cellpadding="0" cellspacing="0" border="0" align="left" class="devicewidth">
+                              <tbody>
+                                 <tr>
+                                    <td valign="middle" width="270" style="padding: 10px 0 10px 20px;" class="logo">
+                                       <div style="font-size: 20px; text-align: right">
+                                          <img style="margin-right: 10px;" src="https://nstopt.ru/image/phoness1.png"><b>8 800 775 30 40</b>
+                                       </div>
+                                          <a href="mailto:info@nstopt.ru" style="font-weight: bold; cursor:pointer; color: #c40000; text-align: right; text-decoration: underline; display:block;">info@nstopt.ru</a>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                           <!-- End of info -->
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+   <!-- end of header -->
+</div><div class="block">
+
+
+<!-- 3-columns -->  
+   <table width="100%" bgcolor="#f6f4f5" cellpadding="0" cellspacing="0" border="0" id="backgroundTable" st-sortable="3columns">
+      <tbody>
+         <tr>
+            <td>
+               <table bgcolor="#ffffff" width="580" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth" modulebg="edit">
+                  <tbody>
+                        <tr>
+                           <td width="100%" height="20"></td>
+                        </tr>
+                     <tr>
+                        <td>
+                           <table width="540" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth">
+                              <tbody>
+                                 <tr>
+                                    <td>
+                                    <!-- col 3 -->
+                                       <table width="170" align="right" border="0" cellpadding="0" cellspacing="0" class="devicewidth">
+                                          <tbody>
+                                             <tr>
+                                                <td>
+                                                   <!-- start of text content table -->  
+                                                   <table width="170" align="center" border="0" cellpadding="0" cellspacing="0" class="devicewidthinner">
+                                                      <tbody>                                                                                           
+                                                         <!-- button -->
+                                                         <tr>
+                                                            <td>
+                                                               <table height="30" align="center" valign="middle" border="0" cellpadding="0" cellspacing="0" class="tablet-button" st-button="edit">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td width="auto" align="center" valign="middle" height="30" style=" background: linear-gradient(to bottom, #feef21, #feef21); border-top-left-radius:4px; border-bottom-left-radius:4px;border-top-right-radius:4px; border-bottom-right-radius:4px; background-clip: padding-box;font-size:15px; font-family:Helvetica, arial, sans-serif; text-align:center;  color:#252525; font-weight: 300; padding-left:18px; padding-right:18px;">
+                                                                        
+                                                                           <span style="color: #252525; font-weight: 300;">
+
+
+
+
+                                                                              <a style="color: #252525; text-align:center;text-decoration: none;" href="https://nstopt.ru/spetsialnoe-predlozhenie/"><b>Распродажа</b></a>
+                                                                           </span>
+                                                                        </td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                         <!-- /button -->
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                             <!-- end of text content table -->
+                                          </tbody>
+                                       </table>
+                                       <!--end of col 3 -->
+                                       <!-- col 3 -->
+                                       <table width="170" align="right" border="0" cellpadding="0" cellspacing="0" class="devicewidth">
+                                          <tbody>
+                                             <tr>
+                                                <td>
+                                                   <!-- start of text content table -->  
+                                                   <table width="170" align="center" border="0" cellpadding="0" cellspacing="0" class="devicewidthinner">
+                                                      <tbody>                                                                                           
+                                                         <!-- button -->
+                                                         <tr>
+                                                            <td>
+                                                               <table height="30" align="center" valign="middle" border="0" cellpadding="0" cellspacing="0" class="tablet-button" st-button="edit">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td width="auto" align="center" valign="middle" height="30" style=" background: linear-gradient(to bottom, #feef21, #feef21); border-top-left-radius:4px; border-bottom-left-radius:4px;border-top-right-radius:4px; border-bottom-right-radius:4px; background-clip: padding-box;font-size:15px; font-family:Helvetica, arial, sans-serif; text-align:center;  color:#252525; font-weight: 300; padding-left:18px; padding-right:18px;">
+                                                                        
+                                                                           <span style="color: #252525; font-weight: 300;">
+                                                                              <a style="color: #252525; text-align:center;text-decoration: none;" href="https://nstopt.ru/leaders/"><b>Лидеры продаж</b></a>
+                                                                           </span>
+                                                                        </td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                         <!-- /button -->
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                             <!-- end of text content table -->
+                                          </tbody>
+                                       </table>
+                                       <!--end of col 3 -->
+                                       <!-- col 3 -->
+                                       <table width="170" align="right" border="0" cellpadding="0" cellspacing="0" class="devicewidth">
+                                          <tbody>
+                                             <tr>
+                                                <td>
+                                                   <!-- start of text content table -->  
+                                                   <table width="170" align="center" border="0" cellpadding="0" cellspacing="0" class="devicewidthinner">
+                                                      <tbody>                                                                                           
+                                                         <!-- button -->
+                                                         <tr>
+                                                            <td>
+                                                               <table height="30" align="center" valign="middle" border="0" cellpadding="0" cellspacing="0" class="tablet-button" st-button="edit">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td width="auto" align="center" valign="middle" height="30" style=" background: linear-gradient(to bottom, #feef21, #feef21); border-top-left-radius:4px; border-bottom-left-radius:4px;border-top-right-radius:4px; border-bottom-right-radius:4px; background-clip: padding-box;font-size:15px; font-family:Helvetica, arial, sans-serif; text-align:center;  color:#252525; font-weight: 300; padding-left:18px; padding-right:18px;">
+                                                                        
+                                                                           <span style="color: #252525; font-weight: 300;">
+                                                                              <a style="color: #252525; text-align:center;text-decoration: none;" href="https://nstopt.ru/catalog/"><b>Рекомендуем</b></a>
+                                                                           </span>
+                                                                        </td>
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                         <!-- /button -->
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                       <!--end of col 3 -->
+                                    </td>   
+                                 </tr>
+                              </tbody>
+                           </table>
+
+                        </td>
+                     </tr> 
+                        <tr>
+                           <td width="100%" height="20"></td>
+                        </tr>
+                  </tbody>
+               </table>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+   <!-- end of 3-columns --> 
+
+   <!-- image + text -->
+    <table width="100%" bgcolor="#f6f4f5" cellpadding="0" cellspacing="0" border="0" id="backgroundTable" st-sortable="bigimage">
+      <tbody>
+         <tr>
+            <td>
+               <table bgcolor="#ffffff" width="580" align="center" cellspacing="0" cellpadding="0" border="0" class="devicewidth" modulebg="edit">
+                  <tbody>
+                     <tr>
+                        <td>
+                           <table width="540" align="center" cellspacing="0" cellpadding="0" border="0" class="devicewidthinner">
+                              <tbody>
+                                 <tr>
+                                     <!--start of image  -->
+                                    <td align="center">
+                                       <a target="_blank" href="https://nstopt.ru/"><img width="540" border="0" height="282" alt="" style="display:block; border:none; outline:none; text-decoration:none;" src="https://nstopt.ru/bigimage.png" class="bigimage"></a>
+                                    </td>
+                                 </tr> 
+                                 <!-- end of image -->
+                                 <!-- Spacing -->
+                                 <tr>
+                                    <td width="100%" height="20"></td>
+                                 </tr>
+                                 <!-- Spacing -->
+                                 <!-- title -->
+                                 <tr>
+                                    <td style="font-family: Helvetica, arial, sans-serif; font-size: 28px; color: #333333; text-align:center;line-height: 20px;" st-title="rightimage-title">
+                                       Приветствуем Вас!   <img src="https://nstopt.ru/favicon-32ng.png"> 
+                                    </td>
+                                 </tr>
+                                 <!-- end of title -->
+                                 <!-- Spacing -->
+                                <tr>
+                                    <td width="100%" height="20"></td>
+                                 </tr>
+                                 <!-- Spacing -->
+                                 <!-- content -->
+                                 <tr>
+                                    <td style="font-family: Helvetica, arial, sans-serif; font-size: 18px; color: #333333; text-align:center;line-height: 24px;" st-content="rightimage-paragraph">
+                                       	Предлагаем Вашему вниманию настоящие 
+                                       	хиты мира игрушек!
+										Именно эти товары стали лидерами 
+										продаж этого месяца.
+										Знакомьтесь, выбирайте, покупайте!
+                                    </td>
+                                 </tr>
+                                 <!-- end of content -->
+                                 <tr>
+                                    <td width="100%" height="20"></td>
+                                 </tr>
+                                 <!-- Spacing -->
+                              </tbody>
+                           </table>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+         </tr>
+      </tbody>
+   </table> 
+</div>
+
+<div class="block">
+   <!-- 3-columns -->  
+   <table width="100%" bgcolor="#f6f4f5" cellpadding="0" cellspacing="0" border="0" id="backgroundTable" st-sortable="3columns">
+      <tbody>
+         <tr>
+            <td>
+               <table bgcolor="#ffffff" width="580" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth" modulebg="edit">
+                  <tbody>
+                     <tr>
+                        <td width="100%" height="20"></td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <table width="540" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth">
+                              <tbody>
+                                 <tr>
+                                    <td>
+                                       <!-- col 1 -->
+                                       <table width="170" align="left" border="0" cellpadding="0" cellspacing="0" class="devicewidth">
+                                          <tbody>
+                                             <!-- image 2 -->
+                                             <tr>
+                                                <td width="170" height="128" align="center" class="devicewidth">
+                                                	<a href="https://nstopt.ru/extended-search/?request=%D1%89%D0%B5%D1%82%D0%B8%D0%BD%D0%BA"><img src="https://nstopt.ru/upload/images/2017-09/a0b1440f54c2a9cce5fc7cc9cc056e1e.jpg" alt="Конструктор со щетинками"  border="0" width="170" height="128" style="display:block; border:none; outline:none; text-decoration:none;" class="col3img" ></a>
+                                                </td>
+                                             </tr>
+                                             <!-- end of image2 -->
+                                             <tr>
+                                                <td>
+                                                   <!-- start of text content table -->  
+                                                   <table width="170" align="center" border="0" cellpadding="0" cellspacing="0" class="devicewidthinner">
+                                                      <tbody>
+                                                         <!-- Spacing -->
+                                                         <tr>
+                                                            <td width="100%" height="15" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                                         </tr>
+                                                         <!-- Spacing -->
+                                                         <!-- title2 -->
+                                                         <tr>
+                                                            <td style="font-family: Helvetica, arial, sans-serif; font-size: 16px; color: #333333; text-align:center;line-height: 20px;" st-title="3col-title1"><b>Конструктор со щетинками</b>
+                                                            </td>
+                                                         </tr>
+                                                         <!-- end of title2 -->
+                                                         <!-- Spacing -->
+                                                         <tr>
+                                                            <td width="100%" height="15" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                                         </tr>
+                                                         
+                                                         <tr>
+                                                            <td width="100%" height="15" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                                         </tr>
+                                                         <!-- Spacing -->
+                                                         <!-- button -->
+                                                         <tr>
+                                                            <td>
+                                                               
+                                                            </td>
+                                                         </tr>
+                                                         <!-- /button -->
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                             <!-- end of text content table -->
+                                          </tbody>
+                                       </table>
+                                       <!-- spacing -->
+                                       <table width="15" align="left" border="0" cellpadding="0" cellspacing="0" class="removeMobile">
+                                          <tbody>
+                                             <tr>
+                                                <td width="100%" height="15" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                       <!-- end of spacing -->
+                                       <!-- col 2 -->
+                                       <table width="170" align="left" border="0" cellpadding="0" cellspacing="0" class="devicewidth">
+                                          <tbody>
+                                             <!-- image 2 -->
+                                             <tr>
+                                                <td width="170" height="128" align="center" class="devicewidth">
+                                                   <a href="https://nstopt.ru/brands/toy-brokers/"><img src="https://nstopt.ru/upload/sosiska.jpg" alt="Оригинальные игры"  border="0" width="170" height="128" style="display:block; border:none; outline:none; text-decoration:none;" class="col3img" ></a>
+                                                </td>
+                                             </tr>
+                                             <!-- end of image2 -->
+                                             <tr>
+                                                <td>
+                                                   <!-- start of text content table -->  
+                                                   <table width="170" align="center" border="0" cellpadding="0" cellspacing="0" class="devicewidthinner">
+                                                      <tbody>
+                                                         <!-- Spacing -->
+                                                         <tr>
+                                                            <td width="100%" height="15" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                                         </tr>
+                                                         <!-- Spacing -->
+                                                         <!-- title2 -->
+                                                         <tr>
+                                                            <td style="font-family: Helvetica, arial, sans-serif; font-size: 16px; color: #333333; text-align:center;line-height: 20px;" st-title="3col-title2"><b>Оригинальные игры</b>
+                                                            </td>
+                                                         </tr>
+                                                         <!-- end of title2 -->
+                                                         <!-- Spacing -->
+                                                         <tr>
+                                                            <td width="100%" height="15" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                                         </tr>
+                                                         
+                                                         <tr>
+                                                            <td width="100%" height="15" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                                         </tr>
+                                                         <!-- /Spacing -->
+                                                         <!-- button -->
+                                                         <tr>
+                                                            <td>
+                                                               
+                                                            </td>
+                                                         </tr>
+                                                         <!-- /button -->
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                             <!-- end of text content table -->
+                                          </tbody>
+                                       </table>
+                                       <!-- end of col 2 -->
+                                       <!-- spacing -->
+                                       <table width="1" align="left" border="0" cellpadding="0" cellspacing="0" class="removeMobile">
+                                          <tbody>
+                                             <tr>
+                                                <td width="100%" height="15" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                       <!-- end of spacing -->
+                                       <!-- col 3 -->
+                                       <table width="170" align="right" border="0" cellpadding="0" cellspacing="0" class="devicewidth">
+                                          <tbody>
+                                             <!-- image3 -->
+                                             <tr>
+                                                <td width="170" height="128" align="center" class="devicewidth">
+                                                  <a href="https://nstopt.ru/brands/imc-toys/"><img src="https://nstopt.ru/upload/images/2017-10/aac72eccfdec0d4a3ec5cfb1c9810f43.jpg" alt="Кролик Bunnies"  border="0" width="170" height="128" style="display:block; border:none; outline:none; text-decoration:none;" class="col3img" ></a>
+                                                </td>
+                                             </tr>
+                                             <!-- end of image3 -->
+                                             <tr>
+                                                <td>
+                                                   <!-- start of text content table -->  
+                                                   <table width="170" align="center" border="0" cellpadding="0" cellspacing="0" class="devicewidthinner">
+                                                      <tbody>
+                                                         <!-- Spacing -->
+                                                         <tr>
+                                                            <td width="100%" height="15" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                                         </tr>
+                                                         <!-- Spacing -->
+                                                         <!-- title -->
+                                                         <tr>
+                                                            <td style="font-family: Helvetica, arial, sans-serif; font-size: 16px; color: #333333; text-align:center;line-height: 20px;" st-title="3col-title3"><b>Кролик Bunnies</b>
+                                                            </td>
+                                                         </tr>
+                                                         <!-- end of title -->
+                                                         <!-- Spacing -->
+                                                         <tr>
+                                                            <td width="100%" height="15" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                                         </tr>
+                                                         
+                                                         <tr>
+                                                            <td width="100%" height="15" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                                         </tr>
+                                                         <!-- Spacing -->
+                                                         <!-- button -->
+                                                         <tr>
+                                                            <td>
+                                                            </td>
+                                                         </tr>
+                                                         <!-- /button -->
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                             <!-- end of text content table -->
+                                          </tbody>
+                                       </table>
+                                    </td>
+                                    <!-- spacing -->
+                                    <!-- end of spacing -->
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td width="100%" height="20"></td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+   <!-- end of 3-columns --> 
+</div>
+<div class="block">
+   <!-- 3-columns -->  
+   <table width="100%" bgcolor="#f6f4f5" cellpadding="0" cellspacing="0" border="0" id="backgroundTable" st-sortable="3columns">
+      <tbody>
+         <tr>
+            <td>
+               <table bgcolor="#ffffff" width="580" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth" modulebg="edit">
+                  <tbody>
+                     <tr>
+                        <td width="100%" height="20"></td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <table width="540" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth">
+                              <tbody>
+                                 <tr>
+                                    <td>
+                                       <!-- col 1 -->
+                                       <table width="170" align="left" border="0" cellpadding="0" cellspacing="0" class="devicewidth">
+                                          <tbody>
+                                             <!-- image 2 -->
+                                             <tr>
+                                                <td width="170" height="128" align="center" class="devicewidth">
+                                                	<a href="https://nstopt.ru/extended-search/?request=defa"><img src="https://nstopt.ru/upload/c7182fead6333337dadd69fabb38f197.jpg" alt="Кукла Defa"  border="0" width="170" height="128" style="display:block; border:none; outline:none; text-decoration:none;" class="col3img" ></a>
+                                                </td>
+                                             </tr>
+                                             <!-- end of image2 -->
+                                             <tr>
+                                                <td>
+                                                   <!-- start of text content table -->  
+                                                   <table width="170" align="center" border="0" cellpadding="0" cellspacing="0" class="devicewidthinner">
+                                                      <tbody>
+                                                         <!-- Spacing -->
+                                                         <tr>
+                                                            <td width="100%" height="15" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                                         </tr>
+                                                         <!-- Spacing -->
+                                                         <!-- title2 -->
+                                                         <tr>
+                                                            <td style="font-family: Helvetica, arial, sans-serif; font-size: 16px; color: #333333; text-align:center;line-height: 20px;" st-title="3col-title1"><b>Кукла Defa</b>
+                                                            </td>
+                                                         </tr>
+                                                         <!-- end of title2 -->
+                                                         <!-- Spacing -->
+                                                         <tr>
+                                                            <td width="100%" height="15" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                                         </tr>
+                                                         
+                                                         <tr>
+                                                            <td width="100%" height="15" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                                         </tr>
+                                                         <!-- Spacing -->
+                                                         <!-- button -->
+                                                         <tr>
+                                                            <td>
+                                                               
+                                                            </td>
+                                                         </tr>
+                                                         <!-- /button -->
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                             <!-- end of text content table -->
+                                          </tbody>
+                                       </table>
+                                       <!-- spacing -->
+                                       <table width="15" align="left" border="0" cellpadding="0" cellspacing="0" class="removeMobile">
+                                          <tbody>
+                                             <tr>
+                                                <td width="100%" height="15" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                       <!-- end of spacing -->
+                                       <!-- col 2 -->
+                                       <table width="170" align="left" border="0" cellpadding="0" cellspacing="0" class="devicewidth">
+                                          <tbody>
+                                             <!-- image 2 -->
+                                             <tr>
+                                                <td width="170" height="128" align="center" class="devicewidth">
+                                                   <a href="https://nstopt.ru/extended-search/?request=%D0%BA%D0%B0%D0%BF%D0%BA%D0%B5%D0%B9"><img src="https://nstopt.ru/upload/images/2017-10/94c4e9c671cbe3a506db62e5a4e6557f.jpg" alt="Куклы Cupcake Jelato"  border="0" width="170" height="128" style="display:block; border:none; outline:none; text-decoration:none;" class="col3img" ></a>
+                                                </td>
+                                             </tr>
+                                             <!-- end of image2 -->
+                                             <tr>
+                                                <td>
+                                                   <!-- start of text content table -->  
+                                                   <table width="170" align="center" border="0" cellpadding="0" cellspacing="0" class="devicewidthinner">
+                                                      <tbody>
+                                                         <!-- Spacing -->
+                                                         <tr>
+                                                            <td width="100%" height="15" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                                         </tr>
+                                                         <!-- Spacing -->
+                                                         <!-- title2 -->
+                                                         <tr>
+                                                            <td style="font-family: Helvetica, arial, sans-serif; font-size: 16px; color: #333333; text-align:center;line-height: 20px;" st-title="3col-title2"><b>Куклы Cupcake Jelato</b>
+                                                            </td>
+                                                         </tr>
+                                                         <!-- end of title2 -->
+                                                         <!-- Spacing -->
+                                                         <tr>
+                                                            <td width="100%" height="15" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                                         </tr>
+                                                         
+                                                         <tr>
+                                                            <td width="100%" height="15" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                                         </tr>
+                                                         <!-- /Spacing -->
+                                                         <!-- button -->
+                                                         <tr>
+                                                            <td>
+                                                               
+                                                            </td>
+                                                         </tr>
+                                                         <!-- /button -->
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                             <!-- end of text content table -->
+                                          </tbody>
+                                       </table>
+                                       <!-- end of col 2 -->
+                                       <!-- spacing -->
+                                       <table width="1" align="left" border="0" cellpadding="0" cellspacing="0" class="removeMobile">
+                                          <tbody>
+                                             <tr>
+                                                <td width="100%" height="15" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                       <!-- end of spacing -->
+                                       <!-- col 3 -->
+                                       <table width="170" align="right" border="0" cellpadding="0" cellspacing="0" class="devicewidth">
+                                          <tbody>
+                                             <!-- image3 -->
+                                             <tr>
+                                                <td width="170" height="128" align="center" class="devicewidth">
+                                                  <a href="https://nstopt.ru/extended-search/?request=%D0%BA%D0%BE%D1%81%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B4%D0%B5%D1%81%D0%B0%D0%BD%D1%82"><img src="http://www.abtoys.ru/filestore/0007/0005/283878/a53a848e-5aa4-11e5-80c9-001e67a327f9.jpg" alt="Космический десант"  border="0" width="170" height="128" style="display:block; border:none; outline:none; text-decoration:none;" class="col3img" ></a>
+                                                </td>
+                                             </tr>
+                                             <!-- end of image3 -->
+                                             <tr>
+                                                <td>
+                                                   <!-- start of text content table -->  
+                                                   <table width="170" align="center" border="0" cellpadding="0" cellspacing="0" class="devicewidthinner">
+                                                      <tbody>
+                                                         <!-- Spacing -->
+                                                         <tr>
+                                                            <td width="100%" height="15" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                                         </tr>
+                                                         <!-- Spacing -->
+                                                         <!-- title -->
+                                                         <tr>
+                                                            <td style="font-family: Helvetica, arial, sans-serif; font-size: 16px; color: #333333; text-align:center;line-height: 20px;" st-title="3col-title3"><b>Космический десант</b>
+                                                            </td>
+                                                         </tr>
+                                                         <!-- end of title -->
+                                                         <!-- Spacing -->
+                                                         <tr>
+                                                            <td width="100%" height="15" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                                         </tr>
+                                                         
+                                                         <tr>
+                                                            <td width="100%" height="15" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                                         </tr>
+                                                         <!-- Spacing -->
+                                                         <!-- button -->
+                                                         <tr>
+                                                            <td>
+                                                            </td>
+                                                         </tr>
+                                                         <!-- /button -->
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                             <!-- end of text content table -->
+                                          </tbody>
+                                       </table>
+                                    </td>
+                                    <!-- spacing -->
+                                    <!-- end of spacing -->
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td width="100%" height="20"></td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+   <!-- end of 3-columns --> 
+</div>
+<div class="block">
+   <!-- 3-columns -->  
+   <table width="100%" bgcolor="#f6f4f5" cellpadding="0" cellspacing="0" border="0" id="backgroundTable" st-sortable="3columns">
+      <tbody>
+         <tr>
+            <td>
+               <table bgcolor="#ffffff" width="580" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth" modulebg="edit">
+                  <tbody>
+                     <tr>
+                        <td width="100%" height="20"></td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <table width="540" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth">
+                              <tbody>
+                                 <tr>
+                                    <td>
+                                       <!-- col 1 -->
+                                       <table width="170" align="left" border="0" cellpadding="0" cellspacing="0" class="devicewidth">
+                                          <tbody>
+                                             <!-- image 2 -->
+                                             <tr>
+                                                <td width="170" height="128" align="center" class="devicewidth">
+                                                	<a href="https://nstopt.ru/extended-search/?request=%D0%BC%D0%B0%D1%8D%D1%81%D1%82%D1%80%D0%BE"><img src="https://nstopt.ru/upload/images/2017-11/87638001925271aa9e987cf7992e0eaf.jpg" alt="Маэстро"  border="0" width="170" height="128" style="display:block; border:none; outline:none; text-decoration:none;" class="col3img" ></a>
+                                                </td>
+                                             </tr>
+                                             <!-- end of image2 -->
+                                             <tr>
+                                                <td>
+                                                   <!-- start of text content table -->  
+                                                   <table width="170" align="center" border="0" cellpadding="0" cellspacing="0" class="devicewidthinner">
+                                                      <tbody>
+                                                         <!-- Spacing -->
+                                                         <tr>
+                                                            <td width="100%" height="15" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                                         </tr>
+                                                         <!-- Spacing -->
+                                                         <!-- title2 -->
+                                                         <tr>
+                                                            <td style="font-family: Helvetica, arial, sans-serif; font-size: 16px; color: #333333; text-align:center;line-height: 20px;" st-title="3col-title1"><b>Маэстро</b>
+                                                            </td>
+                                                         </tr>
+                                                         <!-- end of title2 -->
+                                                         <!-- Spacing -->
+                                                         <tr>
+                                                            <td width="100%" height="15" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                                         </tr>
+                                                         
+                                                         <tr>
+                                                            <td width="100%" height="15" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                                         </tr>
+                                                         <!-- Spacing -->
+                                                         <!-- button -->
+                                                         <tr>
+                                                            <td>
+                                                               
+                                                            </td>
+                                                         </tr>
+                                                         <!-- /button -->
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                             <!-- end of text content table -->
+                                          </tbody>
+                                       </table>
+                                       <!-- spacing -->
+                                       <table width="15" align="left" border="0" cellpadding="0" cellspacing="0" class="removeMobile">
+                                          <tbody>
+                                             <tr>
+                                                <td width="100%" height="15" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                       <!-- end of spacing -->
+                                       <!-- col 2 -->
+                                       <table width="170" align="left" border="0" cellpadding="0" cellspacing="0" class="devicewidth">
+                                          <tbody>
+                                             <!-- image 2 -->
+                                             <tr>
+                                                <td width="170" height="128" align="center" class="devicewidth">
+                                                   <a href="https://nstopt.ru/extended-search/?request=%D1%8F%20%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD%D0%B5%D1%80"><img src="https://nstopt.ru/upload/images/2017-07/32466718179b5779e20015281a0cdbcf.jpg" alt="Я дизайнер"  border="0" width="170" height="128" style="display:block; border:none; outline:none; text-decoration:none;" class="col3img" ></a>
+                                                </td>
+                                             </tr>
+                                             <!-- end of image2 -->
+                                             <tr>
+                                                <td>
+                                                   <!-- start of text content table -->  
+                                                   <table width="170" align="center" border="0" cellpadding="0" cellspacing="0" class="devicewidthinner">
+                                                      <tbody>
+                                                         <!-- Spacing -->
+                                                         <tr>
+                                                            <td width="100%" height="15" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                                         </tr>
+                                                         <!-- Spacing -->
+                                                         <!-- title2 -->
+                                                         <tr>
+                                                            <td style="font-family: Helvetica, arial, sans-serif; font-size: 16px; color: #333333; text-align:center;line-height: 20px;" st-title="3col-title2"><b>Я дизайнер</b>
+                                                            </td>
+                                                         </tr>
+                                                         <!-- end of title2 -->
+                                                         <!-- Spacing -->
+                                                         <tr>
+                                                            <td width="100%" height="15" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                                         </tr>
+                                                         
+                                                         <tr>
+                                                            <td width="100%" height="15" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                                         </tr>
+                                                         <!-- /Spacing -->
+                                                         <!-- button -->
+                                                         <tr>
+                                                            <td>
+                                                               
+                                                            </td>
+                                                         </tr>
+                                                         <!-- /button -->
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                             <!-- end of text content table -->
+                                          </tbody>
+                                       </table>
+                                       <!-- end of col 2 -->
+                                       <!-- spacing -->
+                                       <table width="1" align="left" border="0" cellpadding="0" cellspacing="0" class="removeMobile">
+                                          <tbody>
+                                             <tr>
+                                                <td width="100%" height="15" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                       <!-- end of spacing -->
+                                       <!-- col 3 -->
+                                       <table width="170" align="right" border="0" cellpadding="0" cellspacing="0" class="devicewidth">
+                                          <tbody>
+                                             <!-- image3 -->
+                                             <tr>
+                                                <td width="170" height="128" align="center" class="devicewidth">
+                                                  <a href="https://nstopt.ru/extended-search/?request=%D1%81%D0%BB%D0%B5%D0%BF%D0%BA"><img src="https://nstopt.ru/upload/images/2017-06/6ab2e79c3a95fca4e9040076e81c3cdd.jpg" alt="Слепки ручек и ножек"  border="0" width="170" height="128" style="display:block; border:none; outline:none; text-decoration:none;" class="col3img" ></a>
+                                                </td>
+                                             </tr>
+                                             <!-- end of image3 -->
+                                             <tr>
+                                                <td>
+                                                   <!-- start of text content table -->  
+                                                   <table width="170" align="center" border="0" cellpadding="0" cellspacing="0" class="devicewidthinner">
+                                                      <tbody>
+                                                         <!-- Spacing -->
+                                                         <tr>
+                                                            <td width="100%" height="15" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                                         </tr>
+                                                         <!-- Spacing -->
+                                                         <!-- title -->
+                                                         <tr>
+                                                            <td style="font-family: Helvetica, arial, sans-serif; font-size: 16px; color: #333333; text-align:center;line-height: 20px;" st-title="3col-title3"><b>Слепки ручек и ножек</b>
+                                                            </td>
+                                                         </tr>
+                                                         <!-- end of title -->
+                                                         <!-- Spacing -->
+                                                         <tr>
+                                                            <td width="100%" height="15" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                                         </tr>
+                                                         
+                                                         <tr>
+                                                            <td width="100%" height="15" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                                         </tr>
+                                                         <!-- Spacing -->
+                                                         <!-- button -->
+                                                         <tr>
+                                                            <td>
+                                                            </td>
+                                                         </tr>
+                                                         <!-- /button -->
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                             <!-- end of text content table -->
+                                          </tbody>
+                                       </table>
+                                    </td>
+                                    <!-- spacing -->
+                                    <!-- end of spacing -->
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td width="100%" height="20"></td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+   <!-- end of 3-columns --> 
+</div>
+
+<div class="block">
+   <!-- Full + text -->
+   <table width="100%" bgcolor="#f6f4f5" cellpadding="0" cellspacing="0" border="0" id="backgroundTable" st-sortable="fullimage">
+      <tbody>
+         <tr>
+            <td>
+               <table bgcolor="#ffffff" width="580" align="center" cellspacing="0" cellpadding="0" border="0" class="devicewidth" modulebg="edit">
+                  <tbody>
+                     <tr>
+                        <td width="100%" height="20"></td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <table width="540" align="center" cellspacing="0" cellpadding="0" border="0" class="devicewidthinner">
+                              <tbody>
+                                 <!-- title -->
+                                 <tr>
+                                    <td style="font-family: Helvetica, arial, sans-serif; font-size: 18px; color: #333333; text-align:left;line-height: 20px;" st-title="rightimage-title">
+                                    <!--	P.S. -->
+                                    </td>
+                                 </tr>
+                                 <!-- end of title -->
+                                 <!-- Spacing -->
+                                 <tr>
+                                    <td width="100%" height="20"></td>
+                                 </tr>
+                                 <!-- Spacing -->
+                                 <!-- content -->
+                                 <tr>
+                                    <td style="font-family: Helvetica, arial, sans-serif; font-size: 13px; color: #666666; text-align:left;line-height: 24px;" st-content="rightimage-paragraph">
+                                   	<!--  	 тут че нибудь написать клиенту в пожеланиях  -->
+                                    </td>
+                                 </tr>
+                                 <!-- end of content --> 
+                                 <tr>
+                                    <td width="100%" height="20"></td>
+                                 </tr>
+                                 <!-- button -->
+                                
+                                       <table height="30" align="center" valign="middle" border="0" cellpadding="0" cellspacing="0" class="tablet-button" st-button="edit">
+                                          <tbody>
+                                             <tr>
+                                                <td width="auto" align="center" valign="middle" height="30" style=" background-color:#0db9ea; border-top-left-radius:4px; border-bottom-left-radius:4px;border-top-right-radius:4px; border-bottom-right-radius:4px; background-clip: padding-box;font-size:18px; font-family:Helvetica, arial, sans-serif; text-align:center;  color:#252525; font-weight: 300; padding-left:18px; padding-right:18px;">
+                                                                        
+                                                <span style="color: #252525; font-weight: 300;">
+
+                                                <a style="display: inline-block; background: #0db9ea; padding: 12px 50px; text-decoration: none; font-size: 18px; color: #fff; font-weight: 700;" " href="https://nstopt.ru/novinki/"><b>Перейти в каталог</b></a>
+                                                </span>
+                                                </td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                   
+                                 <!-- /button -->
+                                 <!-- Spacing -->
+                                 <tr>
+                                    <td width="100%" height="10"></td>
+                                 </tr>
+                                 
+
+                                 <tr>
+                                    <td>
+                                       <table height="30" align="center" valign="middle" border="0" cellpadding="0" cellspacing="0" class="tablet-button" st-button="edit">
+                                          <tbody>
+                                             <tr>
+                                                <table>
+                                                   <tr style="font-weight: bold;" >
+
+                                                      <td style="border-right: 1px solid #d6d2b3; padding: 5px;" >
+                                                         <span style="font-weight: bold;float: left; font-size: 30px; margin-right: 10px;">1</span> большой склад в Москве
+                                                      </td>
+                                                      <td style="border-right: 1px solid #d6d2b3; padding: 5px;">
+                                                         <span style="font-weight: bold;float: left; font-size: 30px;  margin-right: 10px;">150</span> городов покупает у нас
+                                                      </td>
+                                                      <td style="padding: 5px;">
+                                                         <span style="font-weight: bold;float: left; font-size: 30px;  margin-right: 10px;">5</span> лет на рынке игрушек
+                                                      </td>  
+                                                   </tr>                                                                       
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                    </td>
+                                 </tr>
+
+
+
+
+                                 <tr>
+                                    <td width="100%" height="10"></td>
+                                 </tr>
+
+
+
+                                 <!-- button -->
+                                 <tr>
+                                    <td>
+                                       <table height="30" align="center" valign="middle" border="0" cellpadding="0" cellspacing="0" class="tablet-button" st-button="edit">
+                                          <tbody>
+                                             <tr>
+                                                <td width="100%" height="20" valign="middle"  style="font-family: Helvetica, Arial, sans-serif;font-size: 14px; color: #ffffff;line-height: 24px; padding: 10px 0;" align="center" class="menu" st-content="menu"  >            
+                                                   <a href="https://nstopt.ru/catalog/igrushki_dlya_malyshey/" style="color: #0db9ea"><b>Игрушки для малышей</b></a>
+                                                   &nbsp;|&nbsp;
+                                                   <a href="https://nstopt.ru/catalog/dlya-mal-chikov/" style="color: #0db9ea"><b>Игрушки для мальчиков</b></a>
+                                                   &nbsp;|&nbsp;
+                                                   <a href="https://nstopt.ru/catalog/dlya-devochek/" style="color: #0db9ea"><b>Игрушки для девочек</b></a>
+
+                                                </td>
+                                                                       
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                    </td>
+                                 </tr>
+                                 <!-- /button -->
+                                 <!-- Spacing -->
+                                 <tr>
+                                    <td width="100%" height="20"></td>
+                                 </tr>
+                                 <!-- Spacing -->
+                              </tbody>
+                           </table>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+</div>
+<div class="block">
+   <!-- Start of preheader -->
+   <table width="100%" bgcolor="#f6f4f5" cellpadding="0" cellspacing="0" border="0" id="backgroundTable" st-sortable="postfooter">
+      <tbody>
+         <tr>
+            <td width="100%">
+               <table width="580" bgcolor="#161212" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth" hlitebg="edit" shadow="edit">
+                  <tbody>
+                     <tr>
+                        <tr>
+                        <td width="100%" height="20"></td>
+                     </tr>
+                        <td>
+                           <!-- logo -->
+                           <table width="280" cellpadding="0" cellspacing="0" border="0" align="left" class="devicewidth">
+                              <tbody>
+                                 <tr>
+                                    <td valign="middle" width="270" style="padding: 10px 0 10px 20px;" class="logo">
+                                       <div class="imgpop">
+                                          <a href="https://nstopt.ru/"><img src="https://nstopt.ru/favicon-64.png" alt="logo" border="0" style="display:block; border:none; outline:none; text-decoration:none;" st-image="edit" class="logo" align="center"></a>
+                                          <a href="https://nstopt.ru/" style="text-decoration: none; color: #999999;">2017 NSTopt.ru. Все права защищены</a>
+                                       </div>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                           <!-- End of logo -->
+                           <!-- menu -->
+                           <table width="280" cellpadding="0" cellspacing="0" border="0" align="right" class="devicewidth">
+                              <tbody>
+                                 <tr>
+                                    <td width="270" valign="middle" style="font-family: Helvetica, Arial, sans-serif;font-size: 14px; color: #ffffff;line-height: 24px; padding: 10px 0;" align="right" class="menu" st-content="menu">
+                                       
+                                       <a href="https://www.instagram.com/nstopt"><img alt="in.png" src="http://nstopt.ru/upload/images/2016-08/in.png" style="color:rgb(40,40,40);font-family:Arial;font-size:14px;text-align:center;" /></a>
+
+                                       <a href="https://vk.com/nstopt"><img alt="vk.png" src="http://nstopt.ru/upload/images/2016-08/vk.png" style="color:rgb(40,40,40);font-family:Arial;font-size:14px;text-align:center;" /></a>
+
+                                       <a href="https://ok.ru/nstoys"><img alt="ok.png" src="http://nstopt.ru/upload/images/2016-08/ok.png" style="color:rgb(40,40,40);font-family:Arial;font-size:14px;text-align:center;" /></a>
+
+                                       <a href="https://www.facebook.com/nstoys.ru"><img alt="fb.png" src="http://nstopt.ru/upload/images/2016-08/fb.png" style="color:rgb(40,40,40);font-family:Arial;font-size:14px;text-align:center;" /></a>
+                                    </td>
+                                    <td width="20"></td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                           <!-- info -->
+                           <table width="280" cellpadding="0" cellspacing="0" border="0" align="left" class="devicewidth">
+                              <tbody>
+                                 <tr>
+                                    <td align="center" valign="middle" style="font-family: Helvetica, arial, sans-serif; font-size: 12px;color: #999999" st-content="preheader">
+                                    Вы получили это письмо, поскольку являетесь зарегистрированным пользователем на сайте nstopt.ru.
+                                    Чтобы отписаться от рассылки, перейдите по  <a class="hlite" href="https://nstopt.ru/API/?TOKEN=FgT6TGdrt5dFsdas87Vgjk&command=unSubscribe&EMAIL=<?=$fields['TO']?>" style="text-decoration: none; color: #0db9ea">ссылке</a> 
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                           <!-- End of info -->
+                        </td>
+                     </tr>
+                     <tr>
+                        <td width="100%" height="30"></td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+   <!-- End of preheader -->
+</div>
+
+</body></html>
+
